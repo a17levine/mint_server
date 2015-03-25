@@ -1,0 +1,1 @@
+web: gunicorn mint_server:app --log-file=-
