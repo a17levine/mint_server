@@ -4,6 +4,7 @@ import time
 import datetime
 import mintapi
 import simplejson
+import urllib
 
 app = Flask(__name__)
 
@@ -13,8 +14,8 @@ def home():
 
 @app.route("/get_mint")
 def get_mint_account():
-	u = request.args.get('u')
-	p = request.args.get('p')
+	u = urllib.unquote(request.args.get('u'))
+	p = urllib.unquote(request.args.get('p'))
 	mint = mintapi.Mint(u, p)
 	all_accounts = mint.get_accounts()
 
@@ -35,5 +36,5 @@ def get_mint_account():
 
 
 if __name__ == "__main__":
-    app.run()
+	app.run()
 
