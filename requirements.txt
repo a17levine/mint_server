@@ -1,4 +1,4 @@
 Flask==0.10.1
 mintapi==1.7
 gunicorn==19.3.0
-simplejson=3.6.5
+simplejson==3.6.5
